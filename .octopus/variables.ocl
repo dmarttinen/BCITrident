@@ -14,28 +14,22 @@ variable "Name" {
     value "Mark" {}
 }
 
-variable "Project.Database.Name" {
-    value "Trident" {}
+variable "Version-match" {
+    value "[1.0,1.1)" {}
 }
 
-variable "Project.Database.Server.Name" {
-    value "Trident_Dev" {
-        environment = ["dale-dev"]
-    }
-
-    value "Trident_Prod" {
+variable "Project.Database.Name" {
+    value "Trident" {
         environment = ["dale-production"]
     }
 
-    value "Trident_QA" {
-        environment = ["dale-qa"]
-    }
-
-    value "Trident_Staging" {
-        environment = ["dale-staging"]
+    value "Trident_#{Octopus.Environment.Name}" {
+        description = ""
     }
 }
 
-variable "Version-match" {
-    value "[1.0,1.1)" {}
+variable "Project.Database.Server.Name" {
+    value "(localdb)\\MSSQLLocalDB" {
+        description = ""
+    }
 }
