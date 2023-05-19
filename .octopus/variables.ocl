@@ -41,5 +41,5 @@ variable "Version-match" {
 }
 
 variable "database-exists" {
-    value "True2" {}
+    value "True" {}
 }
