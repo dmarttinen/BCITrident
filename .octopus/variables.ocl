@@ -45,5 +45,5 @@ variable "database-exists" {
 }
 
 variable "customname" {
-    value "#{Octopus.Action[Hello World Custom].Output.customname}" {}
+    value "#{Octopus.Action[BCI Custom Hello World].Output.customname}" {}
 }
