@@ -40,6 +40,20 @@ step "bci-custom-hello-world" {
     }
 }
 
+step "get-customname" {
+    name = "Get customname"
+
+    action {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.Script.ScriptBody = "Write-Host \"hello $customname is the custom name that we received.\""
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+        }
+        worker_pool = "hosted-windows"
+    }
+}
+
 step "deploy-trident-web" {
     name = "Deploy Trident Web"
     properties = {
