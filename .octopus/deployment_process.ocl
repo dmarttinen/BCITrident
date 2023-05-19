@@ -27,25 +27,6 @@ step "run-octopus-deploy-runbook" {
     }
 }
 
-step "hello-world" {
-    name = "Hello World"
-    properties = {
-        Octopus.Action.TargetRoles = "trident-web"
-    }
-
-    action {
-        action_type = "Octopus.Script"
-        is_disabled = true
-        properties = {
-            Octopus.Action.RunOnServer = "false"
-            Octopus.Action.Script.ScriptBody = "Say-Hello"
-            Octopus.Action.Script.ScriptSource = "Inline"
-            Octopus.Action.Script.Syntax = "PowerShell"
-        }
-        worker_pool_variable = ""
-    }
-}
-
 step "deploy-trident-web" {
     name = "Deploy Trident Web"
     properties = {
@@ -143,5 +124,18 @@ step "trident-email-notification" {
             Octopus.Action.Email.ToTeamIds = "bci-training"
             Octopus.Action.RunOnServer = "false"
         }
+    }
+}
+
+step "bci-custom-hello-world" {
+    name = "BCI Custom Hello World"
+
+    action {
+        properties = {
+            custom-name = "world"
+            Octopus.Action.Template.Id = "ActionTemplates-281"
+            Octopus.Action.Template.Version = "0"
+        }
+        worker_pool = "hosted-windows"
     }
 }
