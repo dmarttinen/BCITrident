@@ -34,7 +34,7 @@ step "bci-custom-hello-world" {
         properties = {
             custom-name = "#{Name}"
             Octopus.Action.Template.Id = "ActionTemplates-281"
-            Octopus.Action.Template.Version = "0"
+            Octopus.Action.Template.Version = "1"
         }
         worker_pool = "hosted-windows"
     }
