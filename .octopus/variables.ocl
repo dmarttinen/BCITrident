@@ -43,3 +43,7 @@ variable "Version-match" {
 variable "database-exists" {
     value "True" {}
 }
+
+variable "customname" {
+    value "#{Octopus.Action[Hello World Custom].Output.customname}" {}
+}
