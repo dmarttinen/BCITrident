@@ -32,7 +32,7 @@ step "bci-custom-hello-world" {
 
     action {
         properties = {
-            custom-name = "#{Name}"
+            custom-name = "customname"
             Octopus.Action.Template.Id = "ActionTemplates-281"
             Octopus.Action.Template.Version = "2"
         }
