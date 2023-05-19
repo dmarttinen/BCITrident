@@ -39,3 +39,7 @@ variable "Project.Database.Server.Name" {
 variable "Version-match" {
     value "[1.0,1.1)" {}
 }
+
+variable "database-exists" {
+    value "True" {}
+}
