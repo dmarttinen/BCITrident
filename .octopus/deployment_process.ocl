@@ -48,7 +48,7 @@ step "bci-custom-hello-world" {
 
     action {
         properties = {
-            custom-name = "customname"
+            custom-name = "#{AzureTenantID}"
             Octopus.Action.Template.Id = "ActionTemplates-281"
             Octopus.Action.Template.Version = "2"
         }
