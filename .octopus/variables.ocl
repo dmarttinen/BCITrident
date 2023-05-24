@@ -62,3 +62,11 @@ variable "AzureAccount" {
 
     value "bci-octo" {}
 }
+
+variable "AzureTenantID" {
+    value "#{AzureAccount.TenantID}" {}
+}
+
+variable "AzurePassword" {
+    value "#{AzureAccount.Password}" {}
+}
