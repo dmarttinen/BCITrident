@@ -56,3 +56,9 @@ variable "Name" {
         }
     }
 }
+
+variable "AzureAccount" {
+    type = "AzureAccount"
+
+    value "bci-octo" {}
+}
