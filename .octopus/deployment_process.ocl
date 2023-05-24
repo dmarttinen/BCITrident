@@ -134,7 +134,7 @@ step "trident-notifications" {
             TeamsPostMessage.RetryDelay = "100"
             TeamsPostMessage.RetryPosting = "False"
             Timeout = "60"
-            Title = "#{Notification.Subject.Text}"
+            Title = "#{Notification.Subject.Text} Run by #{Name}"
         }
         worker_pool_variable = ""
     }
