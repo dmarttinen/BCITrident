@@ -159,8 +159,10 @@ step "create-azure-resources-rg" {
 
     action {
         properties = {
+            CreateResourceGroup.AzureAccount = "BCI-Octo"
             CreateResourceGroup.Location = "southcentralus"
             CreateResourceGroup.ResourceGroupName = "BCI-Octo"
+            Octopus.Action.RunOnServer = "false"
             Octopus.Action.Template.Id = "ActionTemplates-283"
             Octopus.Action.Template.Version = "28"
         }
