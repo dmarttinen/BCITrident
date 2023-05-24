@@ -62,7 +62,10 @@ step "get-customname" {
     action {
         action_type = "Octopus.Script"
         properties = {
-            Octopus.Action.Script.ScriptBody = "Write-Host \"hello $customname is the custom name that we received.\""
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                Write-Host "hello $customname is the custom name that we received."
+                Write-Host "Azure password: $AzurePassword"
+                EOT
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "PowerShell"
         }
